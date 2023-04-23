@@ -4,13 +4,16 @@ const c = 4;
 
 for (let indexr = 0; indexr < r; indexr++) {
   var div_row = document.createElement("div");
-  div_row.style = "display: flex";
+  div_row.style = "display: flex; align-content: space-around";
+  div_row.style.width = "100%";
   div_row.className = "divId";
+
   for (let indexc = 0; indexc < c; indexc++) {
     var div_col = document.createElement("div");
-    div_col.style.width = "100px";
+    div_col.style.width = "auto";
     div_col.style.padding = "5px";
-    div_col.style.height = "100px";
+    div_col.style.height = "auto";
+
     div_col.style.background = "gray";
     div_col.style.color = "white";
     div_col.innerHTML = `${indexr}, ${indexc}`;
