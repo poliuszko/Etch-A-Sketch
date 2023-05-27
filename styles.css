@@ -12,3 +12,27 @@ div:hover {
 .hoverc {
   background: #ff0000;
 }
+
+#top_container {
+  width: 960px;
+  display: flex;
+  justify-content: center;
+}
+
+#set_sq {
+  width: 30%;
+}
+
+/*
+.grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  background-color: var(--secondary-light);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.grid-element {
+  user-select: none;
+}
+*/

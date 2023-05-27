@@ -37,7 +37,7 @@ function generate_matrix(r) {
 
       //div_col.style.background = "gray";
       div_col.style.color = "white";
-      div_col.innerHTML = `${indexr}, ${indexc}`;
+      //div_col.innerHTML = `${indexr}, ${indexc}`;
       div_col.className = "divIdCol";
 
       div_col.style.border = "1px solid black";
