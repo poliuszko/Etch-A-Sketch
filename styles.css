@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-    align-items: center;
-    
+  align-items: center;
 }
 
 #innerContainer {
@@ -13,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
 
-    outline: 1px solid black;
+  outline: 1px solid black;
 }
 
 div:hover {
@@ -28,10 +27,43 @@ div:hover {
   width: 960px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 #set_sq {
   width: 30%;
+}
+
+#panel_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn {
+  font-size: large;
+  font-weight: bold;
+  padding: 30px;
+  margin: 5px;
+  width: 20%;
+  border-radius: 5px;
+  border-width: 1px;
+  color: rgb(39, 42, 44);
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.rainbow {
+  background: linear-gradient(90deg, Red, Orange, Yellow, Green, Blue);
 }
 
 /*
