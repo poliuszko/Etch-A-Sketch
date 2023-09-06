@@ -10,18 +10,18 @@ btn_set_sq.addEventListener("click", function () {
   generate_matrix(r);
 });
 
-function changeColor(event, colr = "black") {
-  //console.log(mouseDown, e.type);
-  //console.log(e.type === "mouseover" && mouseDown);
-  if (e.type === "mouseover") {
-    this.classList.add("colr");
-  }
-}
-
 function generate_matrix(r) {
-  //let mouseDown = false;
-  //document.onmousedown = () => (mouseDown = true);
-  //document.onmouseup = () => (mouseDown = false);
+  function changeColor(e) {
+    console.log(mouseDown, e.type);
+    console.log(e.type === "mouseover" && mouseDown);
+    if (e.type === "mouseover" && mouseDown) {
+      this.classList.add("hoverc");
+    }
+  }
+
+  let mouseDown = false;
+  document.onmousedown = () => (mouseDown = true);
+  document.onmouseup = () => (mouseDown = false);
 
   for (let indexr = 0; indexr < r; indexr++) {
     var div_row = document.createElement("div");
@@ -39,16 +39,14 @@ function generate_matrix(r) {
       div_col.style.color = "white";
       //div_col.innerHTML = `${indexr}, ${indexc}`;
       div_col.className = "divIdCol";
-      const b = "black";
+
       //div_col.style.border = "1px solid black";
       //div_col.style.borderRadius = "2px ";
       div_col.display = "flex";
-      //div_col.addEventListener("mouseover", changeColor(e, "black"));
-      div_col.addEventListener("mouseover", function (e, b) {
-        console.log(e.clientX, "lack");
+      div_col.addEventListener("mouseover", changeColor);
+      div_col.addEventListener("mousedown", function (e) {
+        this.classList.add("hoverc");
       });
-      //div_col.addEventListener("mousedown", function (e) {
-      //  this.classList.add("hoverc");
 
       //e.target.classList.add("hover");
       //e.target.style.backgroundColor = "red";
@@ -61,6 +59,5 @@ function generate_matrix(r) {
     document.getElementById("innerContainer").appendChild(div_row);
   }
 }
-
 //gridElement.addEventListener('mouseover', changeColor)
 //    gridElement.addEventListener('mousedown', changeColor)

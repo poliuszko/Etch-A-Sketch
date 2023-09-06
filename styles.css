@@ -15,7 +15,11 @@
   outline: 1px solid black;
 }
 
-div:hover {
+div.black:hover {
+  color: black;
+}
+
+div.red:hover {
   color: red;
 }
 
@@ -51,6 +55,10 @@ div:hover {
   border-radius: 5px;
   border-width: 1px;
   color: rgb(39, 42, 44);
+}
+
+.black {
+  background-color: black;
 }
 
 .red {
