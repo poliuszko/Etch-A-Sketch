@@ -1,7 +1,10 @@
 "use strict";
 
 const btn_set_sq = document.getElementById("set_sq");
-console.log(btn_set_sq);
+const btn_set_red = document.getElementById("set_red");
+const btn_set_blue = document.getElementById("set_blue");
+const btn_set_green = document.getElementById("set_green");
+const btn_set_black = document.getElementById("set_black");
 
 btn_set_sq.addEventListener("click", function () {
   document.getElementById("innerContainer").innerHTML = "";
@@ -10,12 +13,23 @@ btn_set_sq.addEventListener("click", function () {
   generate_matrix(r);
 });
 
-function changeColor(event, colr = "black") {
+btn_set_red.addEventListener("click", () => color_px = "red" )
+btn_set_blue.addEventListener("click", () => color_px = "blue" )
+btn_set_green.addEventListener("click", () => color_px = "green" )
+btn_set_black.addEventListener("click", () => color_px = "black" )
+
+let color_px = "black";
+
+function changeColor(e, colr = "black") {
+    console.log("Event:", event)
+    console.log("colr", colr)
   //console.log(mouseDown, e.type);
   //console.log(e.type === "mouseover" && mouseDown);
-  if (e.type === "mouseover") {
-    this.classList.add("colr");
+    console.log(e.target)
+    if (e.type === "mouseover") {
+    e.target.classList.add(colr);
   }
+    
 }
 
 function generate_matrix(r) {
@@ -44,9 +58,8 @@ function generate_matrix(r) {
       //div_col.style.borderRadius = "2px ";
       div_col.display = "flex";
       //div_col.addEventListener("mouseover", changeColor(e, "black"));
-      div_col.addEventListener("mouseover", function (e, b) {
-        console.log(e.clientX, "lack");
-      });
+      div_col.addEventListener("mouseover", function(e) {changeColor(e,color_px)});
+      
       //div_col.addEventListener("mousedown", function (e) {
       //  this.classList.add("hoverc");
 
